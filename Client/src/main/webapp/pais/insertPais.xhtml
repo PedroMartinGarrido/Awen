@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	template="../mainawen.xhtml" xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+			<h:outputText value="Nombre" />
+			<h:inputText value="#{beanAdministrado.paisOne.nopais}"></h:inputText>
+			<h:outputText value="Continente" />
+			<h:inputText value="#{beanAdministrado.paisOne.contin}"></h:inputText>
+			<h:outputText value="Comunidad europea (S/N): " />
+			<h:inputText value="#{beanAdministrado.paisOne.comeur}"></h:inputText>
+			<p:commandButton value="Guardar y salir" action="#{beanAdministrado.insertPais}" />
+			<p:commandButton value="Salir sin guardar" action="#{beanAdministrado.irMenu}" />
+	</ui:define>
+</ui:composition>

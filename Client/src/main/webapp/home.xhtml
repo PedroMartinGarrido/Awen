@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head></h:head>
+	<h:body>
+		<h:form>
+			<h:outputText value="Usuario" />
+			<h:inputText value="#{beanAdministrado.nombre}"></h:inputText>
+			<h:outputText value="Contraseña" />
+			<h:inputSecret value="#{beanAdministrado.contrasenya}"></h:inputSecret>
+			<p:commandButton value="Enviar" action="#{beanAdministrado.enviar}" />
+		</h:form>
+	</h:body>
+</ui:composition>
