@@ -6,26 +6,64 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 	<ui:define name="content">
-		<p:dataTable var="pais" value="#{beanAdministrado.paisAll}" rows="15"
-			paginator="true"
+		<div class="menubar">
+			<h:form>
+				<p:menubar>
+					<p:menuitem value="Home"   action="#{beanAdministrado.irMenu}"      icon="images/DbBlueFirst.ico"  update="" />
+					<p:menuitem value="Insert" action="#{beanAdministrado.insertPais}"  icon="/resources/images/DbBlueInsert.ico" update="" />
+					<p:menuitem value="Update" action="#{beanAdministrado.updatePais}"  icon="/resources/images/DbBlueEdit.ico"   update="" />
+					<p:menuitem value="Delete" action="#{beanAdministrado.disablePais}" icon="/resources/images/DbBlueDelete.ico" update="" />
+				</p:menubar>
+			</h:form>
+		</div>
+
+		<p:dataTable var="pais" value="#{beanAdministrado.paisAll}" rows="19"
+			editable="true" editMode="cell" paginator="true"
 			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 			currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
-			rowsPerPageTemplate="5,10,15,20">
+			rowsPerPageTemplate="5,10,15,20,25,30">
 
-			<p:column headerText="inpais" sortBy="#{pais.inpais}" filterBy="#{pais.inpais}">
+			<p:ajax event="cellEdit" listener="#{beanAdministrado.editPais}" />
+
+			<p:column headerText="inpais" sortBy="#{pais.inpais}"
+				filterBy="#{pais.inpais}">
 				<h:outputText value="#{pais.inpais}" />
 			</p:column>
 
-			<p:column headerText="Nombre país" sortBy="#{pais.nopais}" filterBy="#{pais.nopais}">
-				<h:outputText value="#{pais.nopais}" />
+			<p:column headerText="Nombre país" sortBy="#{pais.nopais}"
+				filterBy="#{pais.nopais}">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{pais.nopais}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText id="nopais" value="#{pais.nopais}" style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
 			</p:column>
 
-			<p:column headerText="Continente" sortBy="#{pais.contin}" filterBy="#{pais.contin}">
-				<h:outputText value="#{pais.contin}" />
+			<p:column headerText="Continente" sortBy="#{pais.contin}"
+				filterBy="#{pais.contin}">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{pais.contin}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText id="contin" value="#{pais.contin}" style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
 			</p:column>
 
-			<p:column headerText="C.Europea" sortBy="#{pais.comeur}" filterBy="#{pais.comeur}">
-				<h:outputText value="#{pais.comeur}" />
+			<p:column headerText="U.Europea" sortBy="#{pais.comeur}"
+				filterBy="#{pais.comeur}">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{pais.comeur}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText id="comeur" value="#{pais.comeur}" style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
 			</p:column>
 
 			<p:column headerText="borlog">

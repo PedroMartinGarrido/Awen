@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
+import org.primefaces.event.CellEditEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
@@ -20,8 +21,8 @@ import es.web.services.ServiciosPais;
 public class BeanAdministrado {
 
 	private static final Logger logger = LoggerFactory.getLogger(BeanAdministrado.class);
-	private String nombre = "";
-	private String contrasenya = "";
+	private String usuario = "";
+	private String contrasenya = ""; 
 	ArrayList<PaisTO> paisAll = new ArrayList<PaisTO>();
 	ServiciosPais serviciosPais = new ServiciosPais();
 	PaisTO paisTO = new PaisTO();
@@ -43,7 +44,7 @@ public class BeanAdministrado {
 	}
 
 	public String enviar() {
-		System.out.print("Metodo enviar(): Nombre: " + nombre + " - Contraseña: " + contrasenya);
+		System.out.print("Metodo enviar(): Usuario: " + usuario + " - Contraseña: " + contrasenya);
 
 		String url = "mainawen.xhtml";
 		return url + "?faces-redirect=true";
@@ -67,7 +68,6 @@ public class BeanAdministrado {
 			String contextPath = FacesContext.getCurrentInstance().getExternalContext().getApplicationContextPath();
 			FacesContext.getCurrentInstance().getExternalContext().redirect(contextPath + url);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -79,21 +79,30 @@ public class BeanAdministrado {
 			String contextPath = FacesContext.getCurrentInstance().getExternalContext().getApplicationContextPath();
 			FacesContext.getCurrentInstance().getExternalContext().redirect(contextPath + url);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// return url + "?faces-redirect=true";
 		return;
 	}
 
-	public String getNombre() {
-		System.out.println("Estoy en getNombre....");
-		return nombre;
+	public void updateInpais () {
+		
+	}
+	
+	public void disableInpais () {
+		
+	}
+	
+	public void editPais(CellEditEvent event) {
+        Object oldValue = event.getOldValue();
+        Object newValue = event.getNewValue();
+    }
+	
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setNombre(String nombre) {
-		System.out.println("Estoy en setNombre....");
-		this.nombre = nombre;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getContrasenya() {
