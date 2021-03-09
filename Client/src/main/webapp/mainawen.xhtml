@@ -6,15 +6,7 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 	<h:head>
-		<style>
-			.ui-layout-north {
-				z-index: 20 !important;
-				overflow: visible !important;
-			}
-			.ui-layout-north .ui-layout-unit-content {
-				overflow: visible !important;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="./css/maincss.css" media="screen" />	
 	</h:head>
 	<h:body>
 		<h:form>
@@ -22,44 +14,12 @@
 				<p:layoutUnit position="north">
 					<p:menubar>
 						<p:submenu label="Microservicios" icon="pi pi-file">
-							<p:submenu label="Paises" icon="pi pi-briefcase">
-								<p:menuitem value="InsertPais" action="#{beanAdministrado.capturePais}" />
-								<p:menuitem value="SelectPais" action="#{beanAdministrado.selectPais}" />
-								<p:menuitem value="UpdateInpais" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="UpdateNopais" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="RemoveInpais" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="RemoveNopais" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="CleanNopais" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="DisableInpais" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="DisableNopais" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="EnableInpais" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="EnableNopais" url="/clientAwen/mainawen.xhtml" />
-							</p:submenu>
+							<p:menuitem value="Paises" action="#{beanAdministrado.selectPais}" />
 							<p:submenu label="Provincias" icon="pi pi-briefcase">
-								<p:menuitem value="InsertProv" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="SelectProv" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="UpdateInprov" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="UpdateProvin" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="RemoveInprov" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="RemoveProvin" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="CleanProvin" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="DisableInprov" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="DisableProvin" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="EnableInprov" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="EnableProvin" url="/clientAwen/mainawen.xhtml" />
+								<p:menuitem value="Provincias" url="/clientAwen/mainawen.xhtml" />
 							</p:submenu>
 							<p:submenu label="Poblaciones" icon="pi pi-briefcase">
-								<p:menuitem value="InsertPobl" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="SelectPobl" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="UpdateInpobl" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="UpdatePoblac" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="RemoveInpobl" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="RemovePoblac" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="CleanPpblac" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="DisableInpobl" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="DisablePoblac" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="EnableInpobl" url="/clientAwen/mainawen.xhtml" />
-								<p:menuitem value="EnablePoblac" url="/clientAwen/mainawen.xhtml" />
+								<p:menuitem value="Poblaciones" url="/clientAwen/mainawen.xhtml" />
 							</p:submenu>
 							<p:separator />
 							<p:menuitem value="Salir" url="#" />

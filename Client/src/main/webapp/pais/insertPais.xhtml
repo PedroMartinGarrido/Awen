@@ -6,13 +6,24 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 	<ui:define name="content">
-			<h:outputText value="Nombre" />
-			<h:inputText value="#{beanAdministrado.paisOne.nopais}"></h:inputText>
-			<h:outputText value="Continente" />
-			<h:inputText value="#{beanAdministrado.paisOne.contin}"></h:inputText>
-			<h:outputText value="Comunidad europea (S/N): " />
-			<h:inputText value="#{beanAdministrado.paisOne.comeur}"></h:inputText>
-			<p:commandButton value="Guardar y salir" action="#{beanAdministrado.insertPais}" />
-			<p:commandButton value="Salir sin guardar" action="#{beanAdministrado.irMenu}" />
+		<div class="menubar">
+			<p:menubar>
+				<p:menuitem value="Acept"  action="#{beanAdministrado.insertPais}" 	icon="AceptPais" />
+				<p:menuitem value="Cancel" action="#{beanAdministrado.irMenu}" 		icon="CancelPais" />
+
+			</p:menubar>
+		</div>
+
+	    <p:panel header="Insertando país" style="width:425px; text-align:center" >
+        	<h:panelGrid columns="2" cellpadding="5" >
+				<h:outputText value="Nombre" />
+				<h:inputText value="#{beanAdministrado.paisOne.nopais}"></h:inputText>
+				<h:outputText value="Continente" />
+				<h:inputText value="#{beanAdministrado.paisOne.contin}"></h:inputText>
+				<h:outputText value="Unión europea (S/N): " />
+				<h:inputText value="#{beanAdministrado.paisOne.comeur}"></h:inputText>
+			</h:panelGrid>
+    	</p:panel>
+		
 	</ui:define>
 </ui:composition>

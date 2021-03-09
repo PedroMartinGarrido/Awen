@@ -5,16 +5,17 @@ import java.util.Date;
 
 public class PaisTO implements Serializable {
 
-	private String inpais;
-	private String nopais;
-	private String contin;
-	private String comeur;
-	private String borlog;
-	private String usupro;
-	private String usucre;
-	private String usuult;
-	private Date feccre;
-	private Date fecult;
+	private Boolean issele = false;
+	private String  inpais;
+	private String  nopais;
+	private String  contin;
+	private String  comeur;
+	private String  borlog;
+	private String  usupro;
+	private String  usucre;
+	private String  usuult;
+	private Date    feccre;
+	private Date    fecult;
 
 	public String getInpais() {
 		return inpais;
@@ -25,7 +26,7 @@ public class PaisTO implements Serializable {
 	}
 
 	public String getNopais() {
-		return nopais;
+		return nopais.trim();
 	}
 
 	public void setNopais(String nopais) {
@@ -33,7 +34,7 @@ public class PaisTO implements Serializable {
 	}
 
 	public String getContin() {
-		return contin;
+		return contin.trim();
 	}
 
 	public void setContin(String contin) {
@@ -41,7 +42,7 @@ public class PaisTO implements Serializable {
 	}
 
 	public String getComeur() {
-		return comeur;
+		return comeur.trim();
 	}
 
 	public void setComeur(String comeur) {
@@ -96,4 +97,16 @@ public class PaisTO implements Serializable {
 		this.fecult = fecult;
 	}
 
+	public Boolean getIssele() {
+		return issele;
+	}
+
+	public void setIssele(Boolean issele) {
+		this.issele = issele;
+	}
+
+	public Object comparePaisNopais(PaisTO p2) {
+		return this.nopais.compareTo(p2.getNopais());
+	}
+	
 }

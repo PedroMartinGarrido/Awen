@@ -5,25 +5,31 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
+	
 	<ui:define name="content">
 		<div class="menubar">
-			<h:form>
-				<p:menubar>
-					<p:menuitem value="Home"   action="#{beanAdministrado.irMenu}"      icon="images/DbBlueFirst.ico"  update="" />
-					<p:menuitem value="Insert" action="#{beanAdministrado.insertPais}"  icon="/resources/images/DbBlueInsert.ico" update="" />
-					<p:menuitem value="Update" action="#{beanAdministrado.updatePais}"  icon="/resources/images/DbBlueEdit.ico"   update="" />
-					<p:menuitem value="Delete" action="#{beanAdministrado.disablePais}" icon="/resources/images/DbBlueDelete.ico" update="" />
-				</p:menubar>
-			</h:form>
+			<p:menubar>
+				<p:menuitem value="Home"   action="#{beanAdministrado.irMenu}" icon="goHome" />
+				<p:menuitem value=" " width="100" height="10" />
+				<p:menuitem value="Insert" action="#{beanAdministrado.capturePais}" icon="insertPais" />
+				<p:menuitem value="Update" action="#{beanAdministrado.filterUpdatePais}" icon="updatePais" />
+				<p:menuitem value="Delete" action="#{beanAdministrado.filterDisablePais}" icon="deletePais" />
+			</p:menubar>
 		</div>
 
-		<p:dataTable var="pais" value="#{beanAdministrado.paisAll}" rows="19"
+		<p:dataTable var="pais" value="#{beanAdministrado.paisAll}" rows="15"
 			editable="true" editMode="cell" paginator="true"
 			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 			currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
 			rowsPerPageTemplate="5,10,15,20,25,30">
 
 			<p:ajax event="cellEdit" listener="#{beanAdministrado.editPais}" />
+
+			<p:column headerText="issele" sortBy="#{pais.issele}" filterBy="#{pais.issele}">
+       			<p:selectBooleanCheckbox value="#{pais.issele}" >
+            		<p:ajax listener="#{beanAdministrado.seleccionar(pais.inpais)}"/>
+        		</p:selectBooleanCheckbox>			
+        	</p:column>
 
 			<p:column headerText="inpais" sortBy="#{pais.inpais}"
 				filterBy="#{pais.inpais}">
@@ -70,29 +76,29 @@
 				<h:outputText value="#{pais.borlog}" />
 			</p:column>
 
-			<p:column headerText="usupro">
-				<h:outputText value="#{pais.usupro}" />
-			</p:column>
+<!-- 			<p:column headerText="usupro"> -->
+<!-- 				<h:outputText value="#{pais.usupro}" /> -->
+<!-- 			</p:column> -->
 
-			<p:column headerText="usucre">
-				<h:outputText value="#{pais.usucre}" />
-			</p:column>
+<!-- 			<p:column headerText="usucre"> -->
+<!-- 				<h:outputText value="#{pais.usucre}" /> -->
+<!-- 			</p:column> -->
 
-			<p:column headerText="usuult">
-				<h:outputText value="#{pais.usuult}" />
-			</p:column>
+<!-- 			<p:column headerText="usuult"> -->
+<!-- 				<h:outputText value="#{pais.usuult}" /> -->
+<!-- 			</p:column> -->
 
-			<p:column headerText="feccre">
-				<p:calendar value="#{pais.feccre}" disabled="true"
-					pattern="dd/MM/yyyy HH:mm:ss" effect="explode" locale="es"
-					readonly="true"></p:calendar>
-			</p:column>
+<!-- 			<p:column headerText="feccre"> -->
+<!-- 				<p:calendar value="#{pais.feccre}" disabled="true" -->
+<!-- 					pattern="dd/MM/yyyy HH:mm:ss" effect="explode" locale="es" -->
+<!-- 					readonly="true"></p:calendar> -->
+<!-- 			</p:column> -->
 
-			<p:column headerText="fecult">
-				<p:calendar value="#{pais.fecult}" disabled="true"
-					pattern="dd/MM/yyyy HH:mm:ss" effect="explode" locale="es"
-					readonly="true"></p:calendar>
-			</p:column>
+<!-- 			<p:column headerText="fecult"> -->
+<!-- 				<p:calendar value="#{pais.fecult}" disabled="true" -->
+<!-- 					pattern="dd/MM/yyyy HH:mm:ss" effect="explode" locale="es" -->
+<!-- 					readonly="true"></p:calendar> -->
+<!-- 			</p:column> -->
 
 
 			<f:facet name="paginatorTopLeft">
