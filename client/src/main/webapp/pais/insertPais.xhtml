@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	template="../mainawen.xhtml" xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<div class="menubar">
+			<p:menubar>
+				<p:menuitem value="Acept" action="#{beanAdmiPais.insertPais}"
+					icon="Acept" />
+				<p:menuitem value="Cancel" action="#{beanAdmiPais.selectPais}"
+					icon="Cancel" />
+
+			</p:menubar>
+		</div>
+
+		<p:panel header="Insertando país"
+			style="width:425px; text-align:center">
+			<h:panelGrid columns="2" cellpadding="5">
+				<h:outputText value="Nombre" />
+				<h:inputText value="#{beanAdmiPais.paisOne.nopais}"></h:inputText>
+				<h:outputText value="Continente" />
+				<!-- <h:inputText value="#{beanAdmiPais.paisOne.contin}"></h:inputText> -->
+
+				<h:selectOneMenu value="#{beanAdmiPais.paisOne.contin}"
+					label="Continente" style="width: 180px" filter="true"
+					filterMatchMode="startsWith" panelStyle="width: 100px"
+					scrollHeight="250">
+					<f:selectItems value="#{beanAdmiPais.contins}"></f:selectItems>
+				</h:selectOneMenu>
+
+
+				<h:outputText value="Unión europea (S/N): " />
+				<h:inputText value="#{beanAdmiPais.paisOne.unieur}"></h:inputText>
+
+
+<!-- 				<p:growl id="msg" /> -->
+				<h:outputText value="Unión europea: " />
+				<p:selectBooleanCheckbox value="#{beanAdmiPais.paisOne.isunieur}" itemLabel="">
+<!-- 					<p:ajax update="msg" listener="#{beanAdmiPais.addMessage}" /> -->
+				</p:selectBooleanCheckbox>
+			</h:panelGrid>
+		</p:panel>
+
+	</ui:define>
+</ui:composition>

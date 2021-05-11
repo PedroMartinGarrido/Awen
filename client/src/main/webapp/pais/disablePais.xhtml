@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	template="../mainawen.xhtml" xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<div class="menubar">
+			<p:menubar>
+				<p:menuitem value="First"  action="#{beanAdmiPais.goFirstPais(false)}" icon="goFirst" />
+				<p:menuitem value="Prior"  action="#{beanAdmiPais.goPriorPais(false)}" icon="goPrior" />
+				<p:menuitem value="Next"   action="#{beanAdmiPais.goNextPais(false)}"  icon="goNext" />
+				<p:menuitem value="Last"   action="#{beanAdmiPais.goLastPais(false)}"  icon="goLast" />
+				<p:menuitem value="      " width="100" height="10" />				
+				<p:menuitem value="Acept"  action="#{beanAdmiPais.disablePais(false)}" icon="Acept" />
+				<p:menuitem value="Cancel" action="#{beanAdmiPais.selectPais}" icon="Cancel" />
+			</p:menubar>
+		</div>
+	
+	    <p:panel header="Eliminando país" style="width:425px; text-align:center" >
+        	<h:panelGrid columns="2" cellpadding="5" >
+				<h:outputText value="Nombre" />
+				<h:outputText value="#{beanAdmiPais.paisOne.nopais}"/>
+				<h:outputText value="Continente" />
+				<h:outputText value="#{beanAdmiPais.paisOne.contin}"/>
+				<h:outputText value="Unión europea (S/N) " />
+				<h:outputText value="#{beanAdmiPais.paisOne.unieur}"/>
+			</h:panelGrid>
+    	</p:panel>
+			
+	</ui:define>
+</ui:composition>

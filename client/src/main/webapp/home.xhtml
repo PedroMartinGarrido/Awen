@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head></h:head>
+	<h:body style="text-align:center">
+		<h1>AWEN.- Aplicación Web para Empresas y Negocios</h1>
+		<h:form>
+      		<p:panel header="Autentificación" style="width:350px; text-align:center" >
+        		<h:panelGrid columns="2" cellpadding="5" >
+		
+<!-- 					<h:outputText value="Usuario" /> -->
+<!-- 					<h:inputText value="#{beanAdmiUser.usuario}"></h:inputText> -->
+<!-- 					<h:outputText value="Contraseña" /> -->
+<!-- 					<h:inputSecret value="#{beanAdmiUser.contras}"></h:inputSecret> -->
+					
+					<f:facet name = "footer">
+						<p:commandButton value="Enviar" action="#{beanAdmiUser.enviar}" style="width:298px; text-align:center" />
+					</f:facet>
+					
+      			</h:panelGrid>
+    		</p:panel>
+		</h:form>
+	</h:body>
+</ui:composition>

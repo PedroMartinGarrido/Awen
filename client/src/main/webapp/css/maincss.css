@@ -1,0 +1,70 @@
+@charset "ISO-8859-1";
+
+.ui-layout-north {
+	z-index: 20 !important;
+	overflow: visible !important;
+}
+
+.ui-layout-north .ui-layout-unit-content {
+	overflow: visible !important;
+}
+
+.Acept {
+	background: url(../images/DbAcept.ico) !important;
+	height: 16px;
+	width: 16px;
+}
+
+.Cancel {
+	background: url(../images/DbCancel.ico) !important;
+	height: 16px;
+	width: 16px;
+}
+
+.insert {
+	background: url(../images/DbInsert.ico) !important;
+	height: 16px;
+	width: 16px;
+}
+
+.update {
+	background: url(../images/DbEdit.ico) !important;
+	height: 16px;
+	width: 16px;
+}
+
+.delete {
+	background: url(../images/DbDelete.ico) !important;
+	height: 16px;
+	width: 16px;
+}
+
+.goHome {
+	background: url(../images/DbHome.ico) !important;
+	height: 16px;
+	width: 16px;
+}
+
+.goFirst {
+	background: url(../images/DbFirst.ico) !important;
+	height: 16px;
+	width: 16px;
+}
+
+.goPrior {
+	background: url(../images/DbPrior.ico) !important;
+	height: 16px;
+	width: 16px;
+}
+
+.goNext {
+	background: url(../images/DbNext.ico) !important;
+	height: 16px;
+	width: 16px;
+}
+
+.goLast {
+	background: url(../images/DbLast.ico) !important;
+	height: 16px;
+	width: 16px;
+}

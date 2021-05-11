@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	template="../mainawen.xhtml" xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<div class="menubar">
+			<p:menubar>
+				<p:menuitem value="Acept" action="#{beanAdmiPred.insertPred}"
+					icon="Acept" />
+				<p:menuitem value="Cancel" action="#{beanAdmiPred.selectPred}"
+					icon="Cancel" />
+
+			</p:menubar>
+		</div>
+
+		<p:panel header="Insertando país"
+			style="width:425px; text-align:center">
+			<h:panelGrid columns="2" cellpadding="5">
+				<h:outputText value="Clave" />
+				<h:inputText value="#{beanAdmiPred.predOne.clavex}"></h:inputText>
+				<h:outputText value="Valor" />
+				<!-- <h:inputText value="#{beanAdmiPred.predOne.valorx}"></h:inputText> -->
+			</h:panelGrid>
+		</p:panel>
+
+	</ui:define>
+</ui:composition>
